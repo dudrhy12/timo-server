@@ -13,7 +13,19 @@ spring:
       mode: always
 
   datasource:
-    url: jdbc:mysql://localhost:3306/timo
-    username: root
-    password: 1234
+    url: jdbc:mysql://timo.cwnloybfrgt5.ap-northeast-2.rds.amazonaws.com:3306/timo?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    username: timo
+    password: kiki2023
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+cloud:
+  aws:
+    credentials:
+      access-key: AKIA4AK4HKKQDINVWE45
+      secret-key: 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
+    s3:
+      bucket: timo-qr
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false

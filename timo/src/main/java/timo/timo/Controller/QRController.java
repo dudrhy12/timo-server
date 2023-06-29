@@ -10,12 +10,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import timo.timo.Service.QRService;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
-import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -23,51 +19,50 @@ public class QRController {
 
     private final QRService qrService;
 
+
+
     @GetMapping("/qr")
-    public String qr(@RequestParam String phone) {
-
-        boolean isUser = qrService.findUser(phone);
-
-        if (isUser){
-            return "redirect:https://quickchart.io/qr?text=https://www.naver.com/";
-        }else {
-            return "redirect:https://quickchart.io/qr?text=https://www.google.com/";
-        }
-
-    }
-
-    @GetMapping("/qrtest")
     @ResponseBody
-    public void qrtest() throws IOException {
+    public String qr(@RequestParam String phone) throws IOException {
 
         WebClient client3 = WebClient.builder()
                 .baseUrl("https://quickchart.io/qr")
-                //.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
 
+        byte[] response = null;
 
-        byte[] response = client3.get()
-                .uri(uriBuilder -> uriBuilder
-                        .queryParam("text", "https://www.naver.com/")
-                        .build())
-                .accept(MediaType.IMAGE_PNG)
-                .retrieve()
-                .bodyToMono(byte[].class)
-                .block();
+        boolean isUser = qrService.findUser(phone);
+
+        if (isUser){ // 확인
+
+            response = client3.get()
+                    .uri(uriBuilder -> uriBuilder
+                            .queryParam("text", "https://timo-qr.s3.ap-northeast-2.amazonaws.com/%ED%99%95%EC%9D%B8_%EC%95%88%EB%82%B4%EC%B0%BD.png")
+                            .build())
+                    .accept(MediaType.IMAGE_PNG)
+                    .retrieve()
+                    .bodyToMono(byte[].class)
+                    .block();
+
+        }else { // 미확인
+            response = client3.get()
+                    .uri(uriBuilder -> uriBuilder
+                            .queryParam("text", "https://timo-qr.s3.ap-northeast-2.amazonaws.com/%EB%AF%B8%ED%99%95%EC%9D%B8_%EC%95%88%EB%82%B4%EC%B0%BD.png")
+                            .build())
+                    .accept(MediaType.IMAGE_PNG)
+                    .retrieve()
+                    .bodyToMono(byte[].class)
+                    .block();
+        }
+
 
         ByteArrayInputStream bis = new ByteArrayInputStream(response);
         BufferedImage bImage2 = ImageIO.read(bis);
-        ImageIO.write(bImage2, "png", new File("output.png") );
-        System.out.println("image created");
 
-//        ImageIcon imageIcon = new ImageIcon(response);
-//        return imageIcon.getImage();
-//
-//        //System.out.println("response = " + response);
-//
-//        //System.out.println("response = " + response);
+        String qrURL = qrService.uploadImageFileToAwsS3(bImage2, "png", "qr.png");
+
+        return qrURL;
 
     }
-
 
 }
