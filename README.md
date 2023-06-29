@@ -2,9 +2,9 @@
 <h1>kiki</h1>
 👨‍👩‍👧‍👦공동 육아 서비스👨‍👩‍👧‍👦 <br> <br>
 <img src="https://github.com/swhack2023/timo-server/blob/main/asset/intro.png" width="400" height="200"> <br>
+💻 SW중심대학 공동해커톤 2023 프로젝트 💻
 </div>
 
-> SW중심대학 공동해커톤 2023 프로젝트
 
 ## 1️⃣ 기획 의도
 **불가능해 보이던 저출생 해결을 향해**🛶 <br>
@@ -32,8 +32,7 @@
 | Cloud           | <img src="https://img.shields.io/badge/aws-232F3E?style=for-the-badge&logo=aws&logoColor=white">  |
 <br>
 
-## 4️⃣ 시연 영상
-<br>
+## 4️⃣ 시연 영상 <br>
 ## 5️⃣ 팀원
 
 | 이름     | 개발분야  | 개인 레포                                         | 이메일                    |
