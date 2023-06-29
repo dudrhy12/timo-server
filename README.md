@@ -1,6 +1,7 @@
 <div align=center>
 <h1>kiki</h1>
-👨‍👩‍👧‍👦공동 육아 서비스👨‍👩‍👧‍👦
+👨‍👩‍👧‍👦공동 육아 서비스👨‍👩‍👧‍👦 <br> <br>
+<img src="https://github.com/swhack2023/timo-server/blob/main/asset/intro.png" width="400" height="200"> <br>
 </div>
 
 > SW중심대학 공동해커톤 2023 프로젝트
@@ -13,10 +14,12 @@
 
 
 ## 2️⃣ 기능
-- 지도를 통해 내 위치에서 가까운 육아 장소를 조회할 수 있습니다.
-- 사용자는 원하는 육아 장소를 고르고 자녀를 맡기거나 육아를 신청할 수 있습니다. 
-- 신청 시 발급된 QR코드로 기관에서 신청 내역을 확인할 수 있습니다.
-<br>
+- 지도를 통해 내 위치에서 가까운 육아 장소를 조회할 수 있습니다. <br>
+- 사용자는 원하는 육아 장소를 고르고 자녀를 맡기거나 육아를 신청할 수 있습니다. <br>
+  <img src="https://github.com/swhack2023/timo-server/blob/main/asset/list.png" width="200" height="400">
+  <img src="https://github.com/swhack2023/timo-server/blob/main/asset/apply.jpg" width="200" height="400"> <br> <br>
+- 신청 시 발급된 QR코드로 기관에서 신청 내역을 확인할 수 있습니다. <br>
+  <img src="https://github.com/swhack2023/timo-server/blob/main/asset/QR.jpg" width="200" height="400"> <br> <br>
 
 
 ## 3️⃣ 기술 스택
