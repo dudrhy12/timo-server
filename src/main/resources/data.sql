@@ -1,1 +1,0 @@
-insert into phone(phone_number) values ('01011111111');
