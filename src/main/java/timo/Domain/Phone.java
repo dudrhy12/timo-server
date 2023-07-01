@@ -1,4 +1,4 @@
-package timo.timo.Domain;
+package timo.Domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

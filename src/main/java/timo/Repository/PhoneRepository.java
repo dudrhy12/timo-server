@@ -1,7 +1,7 @@
-package timo.timo.Repository;
+package timo.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import timo.timo.Domain.Phone;
+import timo.Domain.Phone;
 
 public interface PhoneRepository extends JpaRepository<Phone, String> {
 

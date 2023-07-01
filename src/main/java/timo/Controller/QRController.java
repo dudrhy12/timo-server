@@ -1,4 +1,4 @@
-package timo.timo.Controller;
+package timo.Controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.reactive.function.client.WebClient;
-import timo.timo.Service.QRService;
+import timo.Service.QRService;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
