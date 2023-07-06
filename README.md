@@ -35,14 +35,12 @@
 <br>
 
 ## 🎥 시연 영상
-[![image](https://img.icons8.com/color/48/000000/youtube-play.png)](https://youtu.be/Uk1urIk-fCc)
 
 [![공동육아 플랫폼 kiki](http://img.youtube.com/vi/CfdHJzcty7s/0.jpg)](https://youtu.be/CfdHJzcty7s)
 
 
 <br>
-<br>
-<br>
+
 ## 🤝 팀원
 
 | 이름     | 개발분야  | 개인 레포                                         | 이메일                    |
